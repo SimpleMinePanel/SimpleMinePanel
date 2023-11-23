@@ -17,6 +17,7 @@ func main() {
 	}
 	defer dockerCli.Close()
 	router := routes.InitRouter()
+	router.Static("/assets", "./assets")
 	logger.Println("SMP is starting up...")
 	router.Run()
 }
